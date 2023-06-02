@@ -243,7 +243,7 @@ public class ToileController implements Initializable {
     private void ajusterLesLignes() {
         for (int i = 1; i < lesPosY.size() ; i++) {
             if (lesPosY.get(i) != 200 && lesPosY.get(i-1) != 200) {
-                //lesLignes.get(i-1)
+//                lesLignes.get(i-1)
             }
         }
     }
