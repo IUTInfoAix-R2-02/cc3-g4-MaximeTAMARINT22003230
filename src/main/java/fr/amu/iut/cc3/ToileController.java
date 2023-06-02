@@ -60,12 +60,12 @@ public class ToileController implements Initializable {
     @FXML
     Button boutonVider;
 
-    Circle note1 = new Circle(200,200,5);
-    Circle note2 = new Circle(200,200,5);
-    Circle note3 = new Circle(200,200,5);
-    Circle note4 = new Circle(200,200,5);
-    Circle note5 = new Circle(200,200,5);
-    Circle note6 = new Circle(200,200,5);
+    Circle note1 = new Circle(200,200,0);
+    Circle note2 = new Circle(200,200,0);
+    Circle note3 = new Circle(200,200,0);
+    Circle note4 = new Circle(200,200,0);
+    Circle note5 = new Circle(200,200,0);
+    Circle note6 = new Circle(200,200,0);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -91,6 +91,7 @@ public class ToileController implements Initializable {
                     posY = getYRadarChart(Double.parseDouble(comp1.getText()), 1);
                     note1.setCenterX(posX);
                     note1.setCenterY(posY);
+                    note1.setRadius(5);
                 }
                 // si au dessus de 20 ou en dessous de 0
                 else {
@@ -105,6 +106,7 @@ public class ToileController implements Initializable {
                     posY = getYRadarChart(Double.parseDouble(comp2.getText()), 2);
                     note2.setCenterX(posX);
                     note2.setCenterY(posY);
+                    note2.setRadius(5);
                 }
                 // si au dessus de 20 ou en dessous de 0
                 else {
@@ -119,6 +121,7 @@ public class ToileController implements Initializable {
                     posY = getYRadarChart(Double.parseDouble(comp3.getText()), 3);
                     note3.setCenterX(posX);
                     note3.setCenterY(posY);
+                    note3.setRadius(5);
                 }
                 // si au dessus de 20 ou en dessous de 0
                 else {
@@ -133,6 +136,7 @@ public class ToileController implements Initializable {
                     posY = getYRadarChart(Double.parseDouble(comp4.getText()), 4);
                     note4.setCenterX(posX);
                     note4.setCenterY(posY);
+                    note4.setRadius(5);
                 }
                 // si au dessus de 20 ou en dessous de 0
                 else {
@@ -147,6 +151,7 @@ public class ToileController implements Initializable {
                     posY = getYRadarChart(Double.parseDouble(comp5.getText()), 5);
                     note5.setCenterX(posX);
                     note5.setCenterY(posY);
+                    note5.setRadius(5);
                 }
                 // si au dessus de 20 ou en dessous de 0
                 else {
@@ -161,12 +166,30 @@ public class ToileController implements Initializable {
                     posY = getYRadarChart(Double.parseDouble(comp6.getText()), 6);
                     note6.setCenterX(posX);
                     note6.setCenterY(posY);
+                    note6.setRadius(5);
                 }
                 // si au dessus de 20 ou en dessous de 0
                 else  {
                     messageErreur.setText("Erreur de saisi: Les valeurs doivent êtres comprises entre 0 et 20");
                 }
             }
+        });
+
+        boutonVider.setOnAction(actionEvent -> {
+            // mettre la taille des points à 0 ne les rends plus visibles
+            note1.setRadius(0);
+            note2.setRadius(0);
+            note3.setRadius(0);
+            note4.setRadius(0);
+            note5.setRadius(0);
+            note6.setRadius(0);
+
+            comp1.setText("");
+            comp2.setText("");
+            comp3.setText("");
+            comp4.setText("");
+            comp5.setText("");
+            comp6.setText("");
         });
     }
 
