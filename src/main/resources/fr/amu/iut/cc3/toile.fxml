@@ -1,32 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Group?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-
-<HBox id="scene" prefHeight="420.0" prefWidth="650.0" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" >
-    <Pane prefHeight="400.0" prefWidth="400.0" >
-        <Circle centerX="200.0" centerY="200.0" radius="200.0" styleClass="toile"/>
-        <Circle centerX="200.0" centerY="200.0" radius="150.0" styleClass="toile"/>
-        <Circle centerX="200.0" centerY="200.0" radius="100.0" styleClass="toile"/>
-        <Circle centerX="200.0" centerY="200.0" radius="50.0" styleClass="toile"/>
+<HBox id="scene" alignment="CENTER" prefHeight="450" prefWidth="650.0" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.amu.iut.cc3.ToileController">
+    <Pane maxHeight="400.0" maxWidth="400.0" minHeight="400.0" minWidth="400.0" prefHeight="400.0" prefWidth="400.0">
+        <Circle centerX="200.0" centerY="200.0" radius="200.0" styleClass="toile" />
+        <Circle centerX="200.0" centerY="200.0" radius="150.0" styleClass="toile" />
+        <Circle centerX="200.0" centerY="200.0" radius="100.0" styleClass="toile" />
+        <Circle centerX="200.0" centerY="200.0" radius="50.0" styleClass="toile" />
         <Group layoutX="195.0" layoutY="195.0">
-            <Line endX="10.0" endY="5.0" startY="5.0" styleClass="croix"/>
-            <Line endX="5.0" endY="10.0" startX="5.0" styleClass="croix"/>
+            <Line endX="10.0" endY="5.0" startY="5.0" styleClass="croix" />
+            <Line endX="5.0" endY="10.0" startX="5.0" styleClass="croix" />
         </Group>
-        <Line startX="200.0" startY="0" endX="200" endY="400.0" styleClass="toile"/>
-        <Line endX="200.0" endY="400.0" rotate="60.0" startX="200.0" styleClass="toile"/>
-        <Line endX="200.0" endY="400.0" rotate="120.0" startX="200.0" styleClass="toile"/>
-        <Text x="170" y="0" text="Compétence 1" />
-        <Text x="300" y="100" text="Compétence 2" />
-        <Text x="300" y="300" text="Compétence 3" />
-        <Text x="170" y="410" text="Compétence 4" />
-        <Text x="26" y="300" text="Compétence 5" />
-        <Text x="26" y="99" text="Compétence 6" />
-        <Pane fx:id="toile" styleClass="toile"/>
+        <Line endX="200" endY="400.0" startX="200.0" startY="0" styleClass="toile" />
+        <Line endX="200.0" endY="400.0" rotate="60.0" startX="200.0" styleClass="toile" />
+        <Line endX="200.0" endY="400.0" rotate="120.0" startX="200.0" styleClass="toile" />
+        <Text text="Compétence 1" x="170" y="0" />
+        <Text text="Compétence 2" x="300" y="100" />
+        <Text text="Compétence 3" x="300" y="300" />
+        <Text text="Compétence 4" x="170" y="410" />
+        <Text text="Compétence 5" x="26" y="300" />
+        <Text text="Compétence 6" x="26" y="99" />
+        <Pane fx:id="toile" styleClass="toile" />
     </Pane>
+   <VBox alignment="CENTER_RIGHT">
+      <children>
+         <GridPane alignment="CENTER_RIGHT">
+               <TextField GridPane.columnIndex="1" fx:id="comp1">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin></TextField>
+               <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="comp2">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin></TextField>
+               <TextField alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="comp3">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin></TextField>
+               <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="comp4">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin></TextField>
+               <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="comp5" >
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin></TextField>
+               <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" fx:id="comp6">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin></TextField>
+               <Label text="Compétence 1 - Réaliser">
+               <GridPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </GridPane.margin></Label>
+               <Label text="Compétence 2 - Optimiser" GridPane.rowIndex="1">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding></Label>
+               <Label text="Compétence 3 - Administrer" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </GridPane.margin></Label>
+               <Label text="Compétence 4 - Gérer" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </GridPane.margin></Label>
+               <Label text="Compétence 5 - Conduire" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </GridPane.margin></Label>
+               <Label text="Compétence 6 - Collaborer" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </GridPane.margin></Label>
+            <columnConstraints>
+               <ColumnConstraints halignment="LEFT" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" />
+               <ColumnConstraints maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+         </GridPane>
+         <HBox alignment="CENTER" prefHeight="50" prefWidth="400">
+            <children>
+               <Button mnemonicParsing="false" text="Tracer">
+                  <HBox.margin>
+                     <Insets right="10.0" />
+                  </HBox.margin></Button>
+               <Button mnemonicParsing="false" text="Vider">
+                  <HBox.margin>
+                     <Insets left="10.0" />
+                  </HBox.margin></Button>
+            </children>
+            <VBox.margin>
+               <Insets top="70.0" />
+            </VBox.margin>
+         </HBox>
+      </children>
+   </VBox>
 </HBox>

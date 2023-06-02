@@ -10,13 +10,13 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
 import java.net.URL;
@@ -31,6 +31,18 @@ public class ToileController implements Initializable {
     private static int angleDepart = 90;
     private static int noteMaximale = 20;
 
+    @FXML
+    TextField comp1;
+    @FXML
+    TextField comp2;
+    @FXML
+    TextField comp3;
+    @FXML
+    TextField comp4;
+    @FXML
+    TextField comp5;
+    @FXML
+    TextField comp6;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
