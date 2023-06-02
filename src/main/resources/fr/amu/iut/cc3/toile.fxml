@@ -94,11 +94,11 @@
          </GridPane>
          <HBox alignment="CENTER" prefHeight="50" prefWidth="400">
             <children>
-               <Button mnemonicParsing="false" text="Tracer">
+               <Button mnemonicParsing="false" text="Tracer" fx:id="boutonTracer">
                   <HBox.margin>
                      <Insets right="10.0" />
                   </HBox.margin></Button>
-               <Button mnemonicParsing="false" text="Vider">
+               <Button mnemonicParsing="false" text="Vider" fx:id="boutonVider">
                   <HBox.margin>
                      <Insets left="10.0" />
                   </HBox.margin></Button>

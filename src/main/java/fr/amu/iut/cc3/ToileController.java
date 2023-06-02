@@ -44,6 +44,11 @@ public class ToileController implements Initializable {
     @FXML
     TextField comp6;
 
+    @FXML
+    Button boutonTracer;
+    @FXML
+    Button boutonVider;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
