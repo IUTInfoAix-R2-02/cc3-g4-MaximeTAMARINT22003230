@@ -23,6 +23,7 @@ import javafx.scene.shape.Line;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -60,6 +61,12 @@ public class ToileController implements Initializable {
     @FXML
     Button boutonVider;
 
+    Line comp1_2 = new Line(200,200,200,200); //coordonnée 200 = centre du graphe
+    Line comp2_3 = new Line(200,200,200,200);
+    Line comp3_4 = new Line(200,200,200,200);
+    Line comp4_5 = new Line(200,200,200,200);
+    Line comp5_6 = new Line(200,200,200,200);
+    Line comp6_1 = new Line(200,200,200,200);
     Circle note1 = new Circle(200,200,0);
     Circle note2 = new Circle(200,200,0);
     Circle note3 = new Circle(200,200,0);
@@ -67,14 +74,27 @@ public class ToileController implements Initializable {
     Circle note5 = new Circle(200,200,0);
     Circle note6 = new Circle(200,200,0);
 
+    ArrayList<Integer> lesPosX = new ArrayList<>(Arrays.asList(0,0,0,0,0,0));
+    ArrayList<Integer> lesPosY = new ArrayList<>(Arrays.asList(0,0,0,0,0,0));
+    ArrayList<Line> lesLignes = new ArrayList<>();
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         // couleur de fond
         scene.setBackground(new Background(new BackgroundFill(Color.rgb(145,198,255),null,null)));
 
-        // ajout des points au graphes
-        graphe.getChildren().addAll(note1,note2,note3,note4,note5,note6);
+        // ajout les points et les lignes au graphes parents
+        graphe.getChildren().addAll(note1,note2,note3,note4,note5,note6,comp1_2,comp2_3,comp3_4,comp4_5,comp5_6,comp6_1);
+
+        // initialisation lignes
+        comp1_2.setStrokeWidth(0);
+        comp2_3.setStrokeWidth(0);
+        comp3_4.setStrokeWidth(0);
+        comp4_5.setStrokeWidth(0);
+        comp5_6.setStrokeWidth(0);
+        comp6_1.setStrokeWidth(0);
 
         // permettre au message d'être sur plusieurs ligne + couleur rouge
         messageErreur.setWrapText(true);
@@ -92,6 +112,8 @@ public class ToileController implements Initializable {
                     note1.setCenterX(posX);
                     note1.setCenterY(posY);
                     note1.setRadius(5);
+                    lesPosX.set(0,posX);
+                    lesPosY.set(0,posY);
                 }
                 // si au dessus de 20 ou en dessous de 0
                 else {
@@ -107,6 +129,8 @@ public class ToileController implements Initializable {
                     note2.setCenterX(posX);
                     note2.setCenterY(posY);
                     note2.setRadius(5);
+                    lesPosX.set(1,posX);
+                    lesPosY.set(1,posY);
                 }
                 // si au dessus de 20 ou en dessous de 0
                 else {
@@ -122,6 +146,8 @@ public class ToileController implements Initializable {
                     note3.setCenterX(posX);
                     note3.setCenterY(posY);
                     note3.setRadius(5);
+                    lesPosX.set(2,posX);
+                    lesPosY.set(2,posY);
                 }
                 // si au dessus de 20 ou en dessous de 0
                 else {
@@ -137,6 +163,8 @@ public class ToileController implements Initializable {
                     note4.setCenterX(posX);
                     note4.setCenterY(posY);
                     note4.setRadius(5);
+                    lesPosX.set(3,posX);
+                    lesPosY.set(3,posY);
                 }
                 // si au dessus de 20 ou en dessous de 0
                 else {
@@ -152,6 +180,8 @@ public class ToileController implements Initializable {
                     note5.setCenterX(posX);
                     note5.setCenterY(posY);
                     note5.setRadius(5);
+                    lesPosX.set(4,posX);
+                    lesPosY.set(4,posY);
                 }
                 // si au dessus de 20 ou en dessous de 0
                 else {
@@ -167,12 +197,20 @@ public class ToileController implements Initializable {
                     note6.setCenterX(posX);
                     note6.setCenterY(posY);
                     note6.setRadius(5);
+                    lesPosX.set(5,posX);
+                    lesPosY.set(5,posY);
                 }
                 // si au dessus de 20 ou en dessous de 0
                 else  {
                     messageErreur.setText("Erreur de saisi: Les valeurs doivent êtres comprises entre 0 et 20");
                 }
             }
+            lesLignes.set(0,comp1_2);
+            lesLignes.set(1,comp2_3);
+            lesLignes.set(2,comp3_4);
+            lesLignes.set(3,comp4_5);
+            lesLignes.set(4,comp5_6);
+            lesLignes.set(5,comp6_1);
         });
 
         boutonVider.setOnAction(actionEvent -> {
@@ -184,6 +222,14 @@ public class ToileController implements Initializable {
             note5.setRadius(0);
             note6.setRadius(0);
 
+            // initialisation lignes
+            comp1_2.setStrokeWidth(0);
+            comp2_3.setStrokeWidth(0);
+            comp3_4.setStrokeWidth(0);
+            comp4_5.setStrokeWidth(0);
+            comp5_6.setStrokeWidth(0);
+            comp6_1.setStrokeWidth(0);
+
             comp1.setText("");
             comp2.setText("");
             comp3.setText("");
@@ -191,6 +237,15 @@ public class ToileController implements Initializable {
             comp5.setText("");
             comp6.setText("");
         });
+
+    }
+
+    private void ajusterLesLignes() {
+        for (int i = 1; i < lesPosY.size() ; i++) {
+            if (lesPosY.get(i) != 200 && lesPosY.get(i-1) != 200) {
+                //lesLignes.get(i-1)
+            }
+        }
     }
 
     int getXRadarChart(double value, int axe ){
