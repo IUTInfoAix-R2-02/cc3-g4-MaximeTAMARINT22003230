@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
@@ -37,6 +38,9 @@ public class ToileController implements Initializable {
 
     @FXML
     Pane graphe;
+
+    @FXML
+    Label messageErreur;
 
     @FXML
     TextField comp1;
@@ -66,48 +70,103 @@ public class ToileController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        // couleur de fond
         scene.setBackground(new Background(new BackgroundFill(Color.rgb(145,198,255),null,null)));
+
+        // ajout des points au graphes
         graphe.getChildren().addAll(note1,note2,note3,note4,note5,note6);
+
+        // permettre au message d'être sur plusieurs ligne + couleur rouge
+        messageErreur.setWrapText(true);
+        messageErreur.setStyle("-fx-text-fill: #FF0000 ;");
 
         boutonTracer.setOnAction(actionEvent -> {
             int posX = 0;
             int posY = 0;
-
+            messageErreur.setText("");
             // mise à jour du point de la compétence 1
-            posX = getXRadarChart(Double.parseDouble(comp1.getText()),1);
-            posY = getYRadarChart(Double.parseDouble(comp1.getText()),1);
-            note1.setCenterX(posX);
-            note1.setCenterY(posY);
+            if (!comp1.getText().isEmpty()) {
+                if ((Double.parseDouble(comp1.getText()) <= 20.0 && Double.parseDouble(comp1.getText()) >= 0.0)) {
+                    posX = getXRadarChart(Double.parseDouble(comp1.getText()), 1);
+                    posY = getYRadarChart(Double.parseDouble(comp1.getText()), 1);
+                    note1.setCenterX(posX);
+                    note1.setCenterY(posY);
+                }
+                // si au dessus de 20 ou en dessous de 0
+                else {
+                    messageErreur.setText("Erreur de saisi: Les valeurs doivent êtres comprises entre 0 et 20");
+                }
+            }
 
             // mise à jour du point de la compétence 2
-            posX = getXRadarChart(Double.parseDouble(comp2.getText()),2);
-            posY = getYRadarChart(Double.parseDouble(comp2.getText()),2);
-            note2.setCenterX(posX);
-            note2.setCenterY(posY);
+            if (!comp2.getText().isEmpty()) {
+                if ((Double.parseDouble(comp2.getText()) <= 20 && Double.parseDouble(comp2.getText()) >= 0)) {
+                    posX = getXRadarChart(Double.parseDouble(comp2.getText()), 2);
+                    posY = getYRadarChart(Double.parseDouble(comp2.getText()), 2);
+                    note2.setCenterX(posX);
+                    note2.setCenterY(posY);
+                }
+                // si au dessus de 20 ou en dessous de 0
+                else {
+                    messageErreur.setText("Erreur de saisi: Les valeurs doivent êtres comprises entre 0 et 20");
+                }
+            }
 
             // mise à jour du point de la compétence 3
-            posX = getXRadarChart(Double.parseDouble(comp3.getText()),3);
-            posY = getYRadarChart(Double.parseDouble(comp3.getText()),3);
-            note3.setCenterX(posX);
-            note3.setCenterY(posY);
+            if (!comp3.getText().isEmpty()) {
+                if ((Double.parseDouble(comp3.getText()) <= 20 && Double.parseDouble(comp3.getText()) >= 0)) {
+                    posX = getXRadarChart(Double.parseDouble(comp3.getText()), 3);
+                    posY = getYRadarChart(Double.parseDouble(comp3.getText()), 3);
+                    note3.setCenterX(posX);
+                    note3.setCenterY(posY);
+                }
+                // si au dessus de 20 ou en dessous de 0
+                else {
+                    messageErreur.setText("Erreur de saisi: Les valeurs doivent êtres comprises entre 0 et 20");
+                }
+            }
 
             // mise à jour du point de la compétence 4
-            posX = getXRadarChart(Double.parseDouble(comp4.getText()),4);
-            posY = getYRadarChart(Double.parseDouble(comp4.getText()),4);
-            note4.setCenterX(posX);
-            note4.setCenterY(posY);
+            if (!comp4.getText().isEmpty()) {
+                if ((Double.parseDouble(comp4.getText()) <= 20 && Double.parseDouble(comp4.getText()) >= 0)) {
+                    posX = getXRadarChart(Double.parseDouble(comp4.getText()), 4);
+                    posY = getYRadarChart(Double.parseDouble(comp4.getText()), 4);
+                    note4.setCenterX(posX);
+                    note4.setCenterY(posY);
+                }
+                // si au dessus de 20 ou en dessous de 0
+                else {
+                    messageErreur.setText("Erreur de saisi: Les valeurs doivent êtres comprises entre 0 et 20");
+                }
+            }
 
             // mise à jour du point de la compétence 5
-            posX = getXRadarChart(Double.parseDouble(comp5.getText()),5);
-            posY = getYRadarChart(Double.parseDouble(comp5.getText()),5);
-            note5.setCenterX(posX);
-            note5.setCenterY(posY);
+            if (!comp5.getText().isEmpty()) {
+                if ((Double.parseDouble(comp5.getText()) <= 20 && Double.parseDouble(comp5.getText()) >= 0)) {
+                    posX = getXRadarChart(Double.parseDouble(comp5.getText()), 5);
+                    posY = getYRadarChart(Double.parseDouble(comp5.getText()), 5);
+                    note5.setCenterX(posX);
+                    note5.setCenterY(posY);
+                }
+                // si au dessus de 20 ou en dessous de 0
+                else {
+                    messageErreur.setText("Erreur de saisi: Les valeurs doivent êtres comprises entre 0 et 20");
+                }
+            }
 
             // mise à jour du point de la compétence 6
-            posX = getXRadarChart(Double.parseDouble(comp6.getText()),6);
-            posY = getYRadarChart(Double.parseDouble(comp6.getText()),6);
-            note6.setCenterX(posX);
-            note6.setCenterY(posY);
+            if (!comp6.getText().isEmpty()) {
+                if ((Double.parseDouble(comp6.getText()) <= 20 && Double.parseDouble(comp6.getText()) >= 0)) {
+                    posX = getXRadarChart(Double.parseDouble(comp6.getText()), 6);
+                    posY = getYRadarChart(Double.parseDouble(comp6.getText()), 6);
+                    note6.setCenterX(posX);
+                    note6.setCenterY(posY);
+                }
+                // si au dessus de 20 ou en dessous de 0
+                else  {
+                    messageErreur.setText("Erreur de saisi: Les valeurs doivent êtres comprises entre 0 et 20");
+                }
+            }
         });
     }
 

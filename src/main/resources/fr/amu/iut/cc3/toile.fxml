@@ -92,6 +92,7 @@
                <RowConstraints />
             </rowConstraints>
          </GridPane>
+         <Label fx:id="messageErreur" alignment="CENTER_RIGHT" text="" maxHeight="100"/>
          <HBox alignment="CENTER" prefHeight="50" prefWidth="400">
             <children>
                <Button mnemonicParsing="false" text="Tracer" fx:id="boutonTracer">
