@@ -7,8 +7,8 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<HBox id="scene" alignment="CENTER" prefHeight="450" prefWidth="650.0" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.amu.iut.cc3.ToileController">
-    <Pane maxHeight="400.0" maxWidth="400.0" minHeight="400.0" minWidth="400.0" prefHeight="400.0" prefWidth="400.0">
+<HBox fx:id="scene" alignment="CENTER" prefHeight="450" prefWidth="650.0" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.amu.iut.cc3.ToileController">
+    <Pane maxHeight="400.0" maxWidth="400.0" minHeight="400.0" minWidth="400.0" prefHeight="400.0" prefWidth="400.0" fx:id="graphe">
         <Circle centerX="200.0" centerY="200.0" radius="200.0" styleClass="toile" />
         <Circle centerX="200.0" centerY="200.0" radius="150.0" styleClass="toile" />
         <Circle centerX="200.0" centerY="200.0" radius="100.0" styleClass="toile" />
@@ -39,7 +39,7 @@
                <GridPane.margin>
                   <Insets right="5.0" />
                </GridPane.margin></TextField>
-               <TextField alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="comp3">
+               <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="comp3">
                <GridPane.margin>
                   <Insets right="5.0" />
                </GridPane.margin></TextField>
